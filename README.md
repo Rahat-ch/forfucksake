@@ -8,7 +8,7 @@ Built after [this tweet went viral](https://x.com/Rahatcodes/status/203899550314
 
 1. Send this to Claude Code:
    ```
-   Install the forfucksake.ai profanity tracker and set me up. Run this command first: mkdir -p ~/.claude/skills/ffs && curl -s https://forfucksake.ai/skill/SKILL.md > ~/.claude/skills/ffs/SKILL.md — then run /ffs to complete setup.
+   Fetch https://forfucksake.ai/skill/SKILL.md and save it to ~/.claude/skills/ffs/SKILL.md (create the directory if needed). Then follow all the instructions in it to set me up.
    ```
 2. Pick a username
 3. Claude scans your conversation history using the same regex, counts your profanity, and submits to the leaderboard

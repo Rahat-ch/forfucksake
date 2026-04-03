@@ -23,9 +23,17 @@ Public profanity leaderboard for Claude Code users. Next.js 15 + Tailwind + Driz
 
 Pink (#F5A0B8) bg, red-orange (#E8432A) text, cream (#FFF8F0) pill backgrounds. Scattered floating pills on homepage, not a table.
 
+## Branching
+
+- `main` - production. Deploys to forfucksake.ai via Coolify.
+- `development` - all PRs target this branch. Merged to main for releases.
+
+All work should be done on feature branches off `development`. Never push directly to `main`.
+
 ## Dev
 
 ```bash
+git checkout development
 npm install && mkdir -p data && npx drizzle-kit push && npm run dev
 ```
 

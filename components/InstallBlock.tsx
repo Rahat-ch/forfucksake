@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const CLAUDE_PROMPT = `Install the forfucksake.ai profanity tracker and set me up. Run this command first: mkdir -p ~/.claude/skills/ffs && curl -s https://forfucksake.ai/skill/SKILL.md > ~/.claude/skills/ffs/SKILL.md — then run /ffs to complete setup.`;
+const CLAUDE_PROMPT = `Fetch https://forfucksake.ai/skill/SKILL.md and save it to ~/.claude/skills/ffs/SKILL.md (create the directory if needed). Then follow all the instructions in it to set me up.`;
 
 export function InstallBlock() {
   const [copied, setCopied] = useState(false);

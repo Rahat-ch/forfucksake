@@ -5,11 +5,21 @@
 ```bash
 git clone https://github.com/Rahat-ch/forfucksake.git
 cd forfucksake
+git checkout development
 npm install
 mkdir -p data
 npx drizzle-kit push
 npm run dev
 ```
+
+## Branching
+
+All PRs should be made against the `development` branch, NOT `main`. The `main` branch is production and deploys automatically.
+
+1. Fork the repo
+2. Create your branch off `development`: `git checkout -b my-feature development`
+3. Make your changes
+4. Open a PR against `development`
 
 ## Stack
 
@@ -25,6 +35,10 @@ npm run dev
 - `lib/` - Database, schema, validation
 - `public/skill/` - The `/ffs` Claude Code skill
 - `scripts/` - Seed scripts
+
+## For AI Agents
+
+If you're an AI agent contributing to this project, defer to `CLAUDE.md` for project-specific instructions.
 
 ## API
 
