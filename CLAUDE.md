@@ -29,12 +29,24 @@ Pink (#F5A0B8) bg, red-orange (#E8432A) text, cream (#FFF8F0) pill backgrounds. 
 npm install && mkdir -p data && npx drizzle-kit push && npm run dev
 ```
 
-## Versioning
+## Versioning & Releases
 
 Bump version in `package.json` on every deploy to main. The version badge on the landing page reads from package.json automatically. Use semver:
 - patch (1.0.x): bug fixes, copy changes, style tweaks
 - minor (1.x.0): new features, new pages, API changes
 - major (x.0.0): breaking changes to API or skill
+
+On every version bump:
+1. Bump version in `package.json`
+2. Commit with message `vX.Y.Z - description`
+3. Tag: `git tag -a vX.Y.Z -m "vX.Y.Z - description"`
+4. Push: `git push && git push origin vX.Y.Z`
+5. Release: `gh release create vX.Y.Z --title "vX.Y.Z - description" --generate-notes`
+6. Redeploy on Coolify
+
+## Dependencies
+
+All deps pinned to exact versions (no `^` ranges). When updating deps, update both `package.json` and `package-lock.json`.
 
 ## Deploy
 
