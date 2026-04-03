@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
     return new ImageResponse(
       (
         <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "#F5A0B8", padding: "60px" }}>
-          <div style={{ display: "flex", fontSize: 130, fontWeight: 900, color: "#E8432A", lineHeight: 0.85 }}>forfuckssake</div>
+          <div style={{ display: "flex", fontSize: 130, fontWeight: 900, color: "#E8432A", lineHeight: 0.85 }}>forfucksake</div>
           <div style={{ display: "flex", fontSize: 34, color: "#E8432A", marginTop: 30, border: "4px solid #E8432A", borderRadius: 999, padding: "14px 40px", fontWeight: 700 }}>The Global AI-Induced Rage Index</div>
           <div style={{ display: "flex", fontSize: 26, color: "#E8432A", marginTop: 30, opacity: 0.7, fontWeight: 600 }}>Track your developer rage. Compete for shame.</div>
           <div style={{ display: "flex", fontSize: 18, color: "#E8432A", marginTop: 16, opacity: 0.4, fontWeight: 600 }}>forfucksake.ai</div>
@@ -40,7 +40,7 @@ export async function GET(req: NextRequest) {
     (
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", backgroundColor: "#F5A0B8", padding: "50px 60px" }}>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", fontSize: 72, fontWeight: 900, color: "#E8432A", lineHeight: 0.9 }}>forfuckssake</div>
+          <div style={{ display: "flex", fontSize: 72, fontWeight: 900, color: "#E8432A", lineHeight: 0.9 }}>forfucksake</div>
           <div style={{ display: "flex", fontSize: 18, color: "#E8432A", opacity: 0.5, marginTop: 8, fontWeight: 600 }}>The Global AI-Induced Rage Index</div>
         </div>
 

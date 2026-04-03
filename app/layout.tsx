@@ -9,10 +9,10 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "forfuckssake.ai - The Global AI-Induced Rage Index",
+  title: "forfucksake.ai - The Global AI-Induced Rage Index",
   description: "How often do developers curse at their AI? Find out on the public profanity leaderboard.",
   openGraph: {
-    title: "forfuckssake.ai",
+    title: "forfucksake.ai",
     description: "The Global AI-Induced Rage Index - tracking how often devs curse at Claude",
     url: "https://forfucksake.ai",
     type: "website",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "forfuckssake.ai",
+    title: "forfucksake.ai",
     description: "The Global AI-Induced Rage Index",
     images: ["https://forfucksake.ai/api/og"],
   },

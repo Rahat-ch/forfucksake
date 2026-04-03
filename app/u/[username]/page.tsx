@@ -20,16 +20,16 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { username } = await params;
   return {
-    title: `${username} - forfuckssake.ai`,
+    title: `${username} - forfucksake.ai`,
     description: `See how much ${username} curses at their AI`,
     openGraph: {
-      title: `${username} on forfuckssake.ai`,
+      title: `${username} on forfucksake.ai`,
       description: `See how much ${username} curses at their AI`,
       images: [`https://forfucksake.ai/api/og?username=${username}`],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${username} on forfuckssake.ai`,
+      title: `${username} on forfucksake.ai`,
       images: [`https://forfucksake.ai/api/og?username=${username}`],
     },
   };
@@ -65,7 +65,7 @@ export default async function UserProfile({ params }: Props) {
         </div>
       )}
       <div className="text-center mb-8">
-        <p className="text-sm font-bold uppercase tracking-wider opacity-60">forfuckssake.ai</p>
+        <p className="text-sm font-bold uppercase tracking-wider opacity-60">forfucksake.ai</p>
         <h1 className="text-5xl font-black mt-2">{user.username}</h1>
       </div>
 

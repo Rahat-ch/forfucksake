@@ -32,7 +32,7 @@ export default async function Home() {
   return (
     <div className="px-6 pt-8 pb-24 max-w-5xl mx-auto">
       <h1 className="text-[clamp(3rem,12vw,9rem)] font-black leading-[0.9] tracking-tight text-center">
-        forfuckssake
+        forfucksake
       </h1>
 
       <div className="flex justify-center mt-6">

@@ -9,7 +9,7 @@ allowed-tools:
   - Edit
 ---
 
-# forfuckssake.ai - Profanity Tracker
+# forfucksake.ai - Profanity Tracker
 
 When the user runs `/ffs`, execute the following setup flow. This is a ONE-TIME setup.
 
@@ -141,7 +141,7 @@ rl.on('close',async()=>{
 Show the user a formatted report:
 
 ```
-=== Your forfuckssake.ai Report ===
+=== Your forfucksake.ai Report ===
 
 Messages scanned: X,XXX
 Conversations scanned: XX
