@@ -14,7 +14,8 @@ export async function GET(req: NextRequest) {
         <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", backgroundColor: "#F5A0B8", padding: "60px" }}>
           <div style={{ display: "flex", fontSize: 130, fontWeight: 900, color: "#E8432A", lineHeight: 0.85 }}>forfuckssake</div>
           <div style={{ display: "flex", fontSize: 34, color: "#E8432A", marginTop: 30, border: "4px solid #E8432A", borderRadius: 999, padding: "14px 40px", fontWeight: 700 }}>The Global AI-Induced Rage Index</div>
-          <div style={{ display: "flex", fontSize: 22, color: "#E8432A", marginTop: 24, opacity: 0.6, fontWeight: 600 }}>forfucksake.ai</div>
+          <div style={{ display: "flex", fontSize: 26, color: "#E8432A", marginTop: 30, opacity: 0.7, fontWeight: 600 }}>Track your developer rage. Compete for shame.</div>
+          <div style={{ display: "flex", fontSize: 18, color: "#E8432A", marginTop: 16, opacity: 0.4, fontWeight: 600 }}>forfucksake.ai</div>
         </div>
       ),
       { width: 1200, height: 630 }
