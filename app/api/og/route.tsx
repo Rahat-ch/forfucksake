@@ -1,10 +1,8 @@
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 import { db } from "@/lib/db";
 import { submissions } from "@/lib/schema";
 import { eq, sql } from "drizzle-orm";
-
-export const runtime = "nodejs";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
