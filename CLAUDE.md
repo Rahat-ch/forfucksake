@@ -29,6 +29,13 @@ Pink (#F5A0B8) bg, red-orange (#E8432A) text, cream (#FFF8F0) pill backgrounds. 
 npm install && mkdir -p data && npx drizzle-kit push && npm run dev
 ```
 
+## Versioning
+
+Bump version in `package.json` on every deploy to main. The version badge on the landing page reads from package.json automatically. Use semver:
+- patch (1.0.x): bug fixes, copy changes, style tweaks
+- minor (1.x.0): new features, new pages, API changes
+- major (x.0.0): breaking changes to API or skill
+
 ## Deploy
 
-Dockerfile with standalone output. SQLite persisted via Docker volume at /app/data. Deployed on Coolify/Hetzner behind Cloudflare.
+Dockerfile with standalone output. SQLite persisted via Docker volume at /app/data. Deployed on Coolify/Hetzner behind Cloudflare. Redeploy from Coolify dashboard after pushing to main.
