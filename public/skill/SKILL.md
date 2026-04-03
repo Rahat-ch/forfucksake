@@ -18,9 +18,12 @@ When the user runs `/ffs`, execute the following setup flow. This is a ONE-TIME 
 Check if `~/.claude/ffs.json` exists. If it does, tell the user they're already set up and show their current username. Offer to:
 - Rescan history and resubmit
 - Change username
+- Reset hook (re-write ffs-hook.sh and re-add to settings.json)
 - Uninstall
 
-If it doesn't exist, proceed with fresh setup.
+If they choose rescan, skip to Step 6. If they choose change username, go to Step 2 but preserve the existing token. If they choose reset hook, re-run Steps 4 and 5. If uninstall, delete `~/.claude/ffs.json`, `~/.claude/ffs-hook.sh`, `~/.claude/skills/ffs/`, and remove the UserPromptSubmit hook from `~/.claude/settings.json`.
+
+If `~/.claude/ffs.json` doesn't exist, proceed with fresh setup.
 
 ## Step 2: Ask for username
 
@@ -199,7 +202,9 @@ Show the user their rank from the response.
 
 Tell the user:
 - Their score is live at `https://forfucksake.ai`
-- The hook is now passively tracking new curses
 - They can share their profile at `https://forfucksake.ai/u/<username>`
 - Their ownership token is saved in `~/.claude/ffs.json` - **keep this file safe**, it's needed to update their score. To use the same username on another machine, copy this file over.
+- **IMPORTANT: Restart Claude Code** (exit and reopen) for the passive tracking hook to activate. The hook was added to settings.json but won't fire until the next session.
+- After restart, every message you send that contains profanity will automatically update your leaderboard score in the background.
+- To re-run setup or fix issues: type `/ffs` again
 - To uninstall: delete `~/.claude/ffs.json`, `~/.claude/ffs-hook.sh`, `~/.claude/skills/ffs/`, and remove the hook from settings.json
