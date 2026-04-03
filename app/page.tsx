@@ -3,6 +3,7 @@ import { submissions } from "@/lib/schema";
 import { desc, sql } from "drizzle-orm";
 import { StatusBadges } from "@/components/StatusBadges";
 import { FloatingPills } from "@/components/FloatingPills";
+import { InstallBlock } from "@/components/InstallBlock";
 
 export const dynamic = "force-dynamic";
 
@@ -42,6 +43,10 @@ export default async function Home() {
       </div>
 
       <StatusBadges totalFucks={stats.totalFucks} totalUsers={stats.totalUsers} />
+
+      <div className="mt-10">
+        <InstallBlock />
+      </div>
 
       <FloatingPills entries={pillData} />
     </div>
