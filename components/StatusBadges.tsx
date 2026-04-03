@@ -1,3 +1,5 @@
+import pkg from "@/package.json";
+
 interface StatusBadgesProps {
   totalFucks: number;
   totalUsers: number;
@@ -14,7 +16,7 @@ export function StatusBadges({ totalFucks, totalUsers }: StatusBadgesProps) {
     { label: "SYSTEM: LIVE" },
     { label: `TOTAL FUCKS: ${formatCount(totalFucks)}` },
     { label: `${totalUsers} DEVS RAGING` },
-    { label: "V1.0.0-RAGE" },
+    { label: `V${pkg.version}-RAGE` },
   ];
 
   return (
