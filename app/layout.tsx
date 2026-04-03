@@ -16,11 +16,13 @@ export const metadata: Metadata = {
     description: "The Global AI-Induced Rage Index - tracking how often devs curse at Claude",
     url: "https://forfucksake.ai",
     type: "website",
+    images: ["https://forfucksake.ai/api/og"],
   },
   twitter: {
     card: "summary_large_image",
     title: "forfuckssake.ai",
     description: "The Global AI-Induced Rage Index",
+    images: ["https://forfucksake.ai/api/og"],
   },
 };
 
