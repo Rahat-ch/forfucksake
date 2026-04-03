@@ -39,14 +39,14 @@ npm install && mkdir -p data && npx drizzle-kit push && npm run dev
 
 ## Versioning & Releases
 
-Bump version in `package.json` on every deploy to main. The version badge on the landing page reads from package.json automatically. Use semver:
+Every merge from `development` into `main` gets a new version and release. The version badge on the landing page reads from package.json automatically. Use semver:
 - patch (1.0.x): bug fixes, copy changes, style tweaks
 - minor (1.x.0): new features, new pages, API changes
 - major (x.0.0): breaking changes to API or skill
 
-On every version bump:
-1. Bump version in `package.json`
-2. Commit with message `vX.Y.Z - description`
+Release process (every dev -> main merge):
+1. Bump version in `package.json` on `development`
+2. Merge `development` into `main`
 3. Tag: `git tag -a vX.Y.Z -m "vX.Y.Z - description"`
 4. Push: `git push && git push origin vX.Y.Z`
 5. Release: `gh release create vX.Y.Z --title "vX.Y.Z - description" --generate-notes`
