@@ -22,23 +22,27 @@ export async function GET(req: NextRequest) {
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: "#F5A0B8",
-            padding: "40px",
+            padding: "60px",
           }}
         >
-          <div style={{ fontSize: 120, fontWeight: 900, color: "#E8432A", lineHeight: 0.9 }}>
+          <div style={{ fontSize: 140, fontWeight: 900, color: "#E8432A", lineHeight: 0.85, letterSpacing: "-0.03em" }}>
             forfuckssake
           </div>
           <div
             style={{
-              fontSize: 32,
+              fontSize: 36,
               color: "#E8432A",
-              marginTop: 24,
-              border: "3px solid #E8432A",
+              marginTop: 32,
+              border: "4px solid #E8432A",
               borderRadius: 999,
-              padding: "12px 32px",
+              padding: "14px 40px",
+              fontWeight: 700,
             }}
           >
             The Global AI-Induced Rage Index
+          </div>
+          <div style={{ fontSize: 22, color: "#E8432A", marginTop: 24, opacity: 0.6, fontWeight: 600 }}>
+            forfucksake.ai
           </div>
         </div>
       ),
@@ -81,6 +85,9 @@ export async function GET(req: NextRequest) {
     .from(submissions)
     .where(sql`${submissions.total} > ${user.total}`);
 
+  const breakdown: Record<string, number> = JSON.parse(user.breakdown);
+  const topEntries = Object.entries(breakdown).sort((a, b) => b[1] - a[1]).slice(0, 3);
+
   return new ImageResponse(
     (
       <div
@@ -88,67 +95,68 @@ export async function GET(req: NextRequest) {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
           backgroundColor: "#F5A0B8",
-          padding: "60px",
+          padding: "50px 60px",
         }}
       >
-        <div style={{ fontSize: 36, color: "#E8432A", fontWeight: 700, opacity: 0.6 }}>
-          forfuckssake.ai
-        </div>
-        <div style={{ fontSize: 72, fontWeight: 900, color: "#E8432A", marginTop: 20 }}>
-          {user.username}
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            gap: "12px",
-            marginTop: 16,
-          }}
-        >
-          <span style={{ fontSize: 96, fontWeight: 900, color: "#E8432A" }}>
-            {user.total.toLocaleString()}
-          </span>
-          <span style={{ fontSize: 36, fontWeight: 700, color: "#E8432A", opacity: 0.7 }}>
-            fucks given
-          </span>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            gap: "24px",
-            marginTop: 32,
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "#E8432A",
-              color: "#FFF8F0",
-              padding: "10px 24px",
-              borderRadius: 8,
-              fontSize: 20,
-              fontWeight: 700,
-            }}
-          >
-            RANK #{rank}
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", flex: 1 }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ fontSize: 80, fontWeight: 900, color: "#E8432A", lineHeight: 0.9, letterSpacing: "-0.02em" }}>
+              forfuckssake
+            </div>
+            <div style={{ fontSize: 18, color: "#E8432A", opacity: 0.5, marginTop: 8, fontWeight: 600 }}>
+              The Global AI-Induced Rage Index
+            </div>
           </div>
-          {user.topWord && (
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+            <div style={{ fontSize: 56, fontWeight: 900, color: "#E8432A" }}>
+              {user.username}
+            </div>
+            <div style={{ display: "flex", alignItems: "baseline", gap: "12px" }}>
+              <span style={{ fontSize: 120, fontWeight: 900, color: "#E8432A", lineHeight: 1 }}>
+                {user.total.toLocaleString()}
+              </span>
+              <span style={{ fontSize: 32, fontWeight: 700, color: "#E8432A", opacity: 0.6 }}>
+                fucks given
+              </span>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", gap: "16px" }}>
             <div
               style={{
                 backgroundColor: "#E8432A",
                 color: "#FFF8F0",
-                padding: "10px 24px",
-                borderRadius: 8,
-                fontSize: 20,
-                fontWeight: 700,
+                padding: "12px 28px",
+                borderRadius: 12,
+                fontSize: 22,
+                fontWeight: 800,
+                letterSpacing: "0.05em",
               }}
             >
-              TOP WORD: {user.topWord}
+              RANK #{rank}
             </div>
-          )}
+            {topEntries.map(([word, count]) => (
+              <div
+                key={word}
+                style={{
+                  backgroundColor: "#FFF8F0",
+                  color: "#E8432A",
+                  padding: "12px 28px",
+                  borderRadius: 12,
+                  fontSize: 22,
+                  fontWeight: 700,
+                  border: "3px solid #E8432A",
+                  display: "flex",
+                  gap: "8px",
+                }}
+              >
+                <span>{word}</span>
+                <span style={{ fontWeight: 900 }}>{count}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     ),

@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# forfucksake.ai
 
-## Getting Started
+The Global AI-Induced Rage Index - a public leaderboard tracking how often developers curse at their AI coding assistant.
 
-First, run the development server:
+Built after [this tweet went viral](https://x.com/Rahatcodes/status/2038995503141065145) revealing that Claude Code has a built-in regex that silently detects profanity and logs `is_negative: true` to analytics.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## How It Works
+
+1. Send this to Claude Code:
+   ```
+   Install the forfucksake.ai profanity tracker and set me up. Run this command first: mkdir -p ~/.claude/skills/ffs && curl -s https://forfucksake.ai/skill/SKILL.md > ~/.claude/skills/ffs/SKILL.md — then run /ffs to complete setup.
+   ```
+2. Pick a username
+3. Claude scans your conversation history using the same regex, counts your profanity, and submits to the leaderboard
+4. A passive hook tracks new curses going forward
+
+## The Regex
+
+```regex
+/\b(wtf|wth|ffs|omfg|shit(ty|tiest)?|dumbass|horrible|awful|piss(ed|ing)? off|piece of (shit|crap|junk)|what the (fuck|hell)|fuck(ing)? (broken|useless|terrible|awful|horrible)|fuck you|screw (this|you)|so frustrating|this sucks|damn it)\b/gi
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: Next.js 15, Tailwind CSS
+- **Database**: SQLite via Drizzle ORM
+- **Hosting**: Coolify on Hetzner, Cloudflare CDN
+- **Skill**: Claude Code UserPromptSubmit hook
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
 
-## Learn More
+```bash
+npm install
+mkdir -p data
+npx drizzle-kit push
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Seed test data: `npx tsx scripts/seed.ts`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Privacy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Only usernames and aggregated word counts are sent. No message content, code, or conversation history ever leaves your machine.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Apache 2.0 - see [LICENSE](LICENSE)
